@@ -1,6 +1,7 @@
 let form =document.getElementById('addForm');
 let itemList= document.getElementById('items');
 
+
 //Form submmit event
 
 form.addEventListener('submit', addItem);
