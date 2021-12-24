@@ -22,12 +22,13 @@
 
 //variables
 //create a variable for the input
-let input= document.querySelector('input[type="text"]')
+let input= document.querySelector('input[type="text"]').value
 let form=document.querySelector('form');
 //console.log(input);
 //console.log(form);
 
 //create a variable for the button
+let itemArray=[];
 let button=document.getElementById('button')
 //console.log(button);
 
@@ -38,32 +39,39 @@ let button=document.getElementById('button')
 // button.addEventListener('click', function(){
 // console.log(input.value)
 // }); 
-button.addEventListener('click', addItem());
+// button.addEventListener('click', addItem());
 
-function addItem(){
-    runEvent();
-}
+// function addItem(){
+//     runEvent();
+// }
 
 //  input.addEventListener('keydown', runEvent);
 
 
+button.addEventListener('click', runEvent());
 
-function runEvent(){
-    input.addEventListener('keydown', function(e){
+function runEvent(e){
+    //input.addEventListener('keydown', function(e){
+    let input= document.querySelector('input[type="text"]').value
     let li=document.createElement('li');
-    let listInput=li.innerHTML='<li>'+e.target.value+'<li>';
+    let listInput=li.innerHTML='<li>'+input.value+'<li>';
+    itemArray.push(listInput);
+    console.log (itemArray)
     //console.log(listInput);  
-    li.appendChild(listInput);
-    });
+    //li.appendChild(listInput);
+      //listInput.setAttribute ('class', 'list-group-item');
+   // document.querySelector('ul').appendChild(li);
+
+    }
 
    
    
     
-    //listInput.setAttribute ('class', 'list-group-item');
-    //document.querySelector('ul').appendChild(li);
+  
+ 
     
 
-}
+
 /*function for inserting listed item
 function addInput(e)
 console.log(e.target.value)
